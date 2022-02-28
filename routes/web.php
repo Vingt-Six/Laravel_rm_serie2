@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\FourController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SecondController;
+use App\Http\Controllers\ThirdController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('first');
+Route::get('/', [HomeController::class, 'index'])->name('first');
 
-Route::get('/p2', function(){
-    return view('page2');
-})->name('second');
+Route::get('/p2', [SecondController::class, 'index'])->name('second');
 
-Route::get('/p3', function(){
-    return view('page3');
-})->name('third');
+Route::get('/p3', [ThirdController::class, 'index'])->name('third');
+
+Route::get('/p4', [FourController::class, 'index'])->name('four');

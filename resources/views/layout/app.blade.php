@@ -28,6 +28,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ Route('third') }}">Age</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ Route('four') }}">Matos</a>
+                    </li>
                 </ul>
             </div>
         </div>
