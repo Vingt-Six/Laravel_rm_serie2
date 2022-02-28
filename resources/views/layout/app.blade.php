@@ -37,24 +37,34 @@
 
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACyCAMAAACnS4D4AAAAA1BMVEWoStT7OYBAAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADeDcYqAAE00FRDAAAAAElFTkSuQmCC" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.ceradel.fr/6075-thickbox_default/fond-couleur-vert-moyen-dim33x23cm.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.wapiti-magazine.com/wp-content/uploads/sites/26/2013/06/Graeme-Purdy-iStock.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://i-mom.unimedias.fr/2020/09/16/le-loup-un-animal-sauvage-rare-et-majestueux.jpg?auto=format,compress&cs=tinysrgb" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.galbani.fr/wp-content/uploads/2017/07/shutterstock_142426168-800x600.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.galbani.fr/wp-content/uploads/2017/07/pizza_maison.jpg" class="d-block w-100" alt="...">
-            </div>
+            @if (\Request::is('/'))
+                <div class="carousel-item active couleur">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACyCAMAAACnS4D4AAAAA1BMVEWoStT7OYBAAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADeDcYqAAE00FRDAAAAAElFTkSuQmCC"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item couleur">
+                    <img src="https://www.ceradel.fr/6075-thickbox_default/fond-couleur-vert-moyen-dim33x23cm.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+            @elseif (\Request::is('p2'))
+                <div class="carousel-item active animaux">
+                    <img src="https://www.wapiti-magazine.com/wp-content/uploads/sites/26/2013/06/Graeme-Purdy-iStock.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item animaux">
+                    <img src="https://i-mom.unimedias.fr/2020/09/16/le-loup-un-animal-sauvage-rare-et-majestueux.jpg?auto=format,compress&cs=tinysrgb"
+                        class="d-block w-100" alt="...">
+                </div>
+            @elseif (\Request::is('p3'))
+                <div class="carousel-item active plat">
+                    <img src="https://www.galbani.fr/wp-content/uploads/2017/07/shutterstock_142426168-800x600.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item plat">
+                    <img src="https://www.galbani.fr/wp-content/uploads/2017/07/pizza_maison.jpg" class="d-block w-100"
+                        alt="...">
+                </div>
+            @endif
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
             data-bs-slide="prev">
